@@ -100,7 +100,29 @@ public class GameArea extends JPanel {
         if (block.getLeftEdge() < 0) block.setX(0);
         if (block.getRightEdge() >= gridColumns) block.setX(gridColumns - block.getWidth());
         if (block.getBottomEdge() >= gridRows) block.setY(gridRows - block.getHeight());
+        while (!checkOverlap()) block.setY(block.getY() - 1);
         repaint();
+    }
+    public boolean checkOverlap() {
+        if (block.getBottomEdge() == gridRows) {
+            return false;
+        }
+
+        int[][] shape = block.getShape();
+        int w = block.getWidth();
+        int h = block.getHeight();
+        for (int col = 0; col < w; col++) {
+            for (int row = h - 1; row >= 0; row--) {
+                if (shape[row][col] != 0) {
+                    int x = col + block.getX();
+                    int y = row + block.getY();
+                    if (y < 0) break;
+                    if (background[y][x] != null) return false;
+                    break;
+                }
+            }
+        }
+        return true;
     }
     public  boolean checkBottom() {
         if (block.getBottomEdge() == gridRows) {
