@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c098e06d-d6b2-4846-8fed-e082701961ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetrisblocks/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetrisblocks/IShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +96,7 @@
       <workItem from="1714202114665" duration="24779000" />
       <workItem from="1714328591042" duration="3193000" />
       <workItem from="1714410437749" duration="1536000" />
-      <workItem from="1714450636077" duration="9452000" />
+      <workItem from="1714450636077" duration="10537000" />
     </task>
     <servers />
   </component>
