@@ -97,6 +97,9 @@ public class GameArea extends JPanel {
     public void rotateBlock() {
         if (block == null) return;
         block.rotate();
+        if (block.getLeftEdge() < 0) block.setX(0);
+        if (block.getRightEdge() >= gridColumns) block.setX(gridColumns - block.getWidth());
+        if (block.getBottomEdge() >= gridRows) block.setY(gridRows - block.getHeight());
         repaint();
     }
     public  boolean checkBottom() {

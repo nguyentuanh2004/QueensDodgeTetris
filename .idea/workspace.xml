@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c098e06d-d6b2-4846-8fed-e082701961ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/inputs/KeyboardInputs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inputs/MouseInputs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris/GameForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris/GameThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetrisblocks/IShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetrisblocks/JShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetrisblocks/LShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetrisblocks/OShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetrisblocks/SShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetrisblocks/TShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetrisblocks/ZShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetrisblocks/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetrisblocks/IShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +99,7 @@
       <workItem from="1714202114665" duration="24779000" />
       <workItem from="1714328591042" duration="3193000" />
       <workItem from="1714410437749" duration="1536000" />
-      <workItem from="1714450636077" duration="7106000" />
+      <workItem from="1714450636077" duration="9452000" />
     </task>
     <servers />
   </component>
