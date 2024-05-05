@@ -30,11 +30,15 @@ public class GameForm extends JFrame {
         levelDisplay.setBounds(520, 60, 180, 45);
         this.add(scoreDisplay);
         this.add(levelDisplay);
-        btMainMenu = new JButton("Main Menu");
-        Color PaleVioletRed = new Color(219,112,147);
-        btMainMenu.setBackground(PaleVioletRed);
-        btMainMenu.setOpaque(true);
-        btMainMenu.setBorderPainted(true);
+
+        ImageIcon icon = new ImageIcon("res/gamebutton/MainMenuButton.png");
+        Image image = icon.getImage();
+        Image resizeImg = image.getScaledInstance(150, 30, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btMainMenu = new JButton(icon);
+        btMainMenu.setOpaque(false);
+        btMainMenu.setContentAreaFilled(false);
+        btMainMenu.setBorderPainted(false);
         btMainMenu.setBounds(10, 10, 150, 30);
 
         btMainMenu.addActionListener(new ActionListener() {

@@ -12,13 +12,17 @@ public class StartupForm extends JFrame {
     public StartupForm() {
         this.setSize(720, 500);
         Color pink = new Color(255,192,203);
-        Color PaleVioletRed = new Color(219,112,147);
         this.getContentPane().setBackground(pink);
-        btStart = new JButton("Start Game");
-        btStart.setFont(new Font("Dialog", Font.PLAIN, 20));
-        btStart.setBackground(PaleVioletRed);
-        btStart.setOpaque(true);
-        btStart.setBorderPainted(true);
+
+        ImageIcon icon = new ImageIcon("res/gamebutton/StartGameButton.png");
+        Image image = icon.getImage();
+        Image resizeImg = image.getScaledInstance(220, 45, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+
+        btStart = new JButton(icon);
+        btStart.setOpaque(false);
+        btStart.setContentAreaFilled(false);
+        btStart.setBorderPainted(false);
 
         btStart.addActionListener(new ActionListener() {
             @Override
@@ -28,12 +32,15 @@ public class StartupForm extends JFrame {
             }
         });
 
-        //btStart.setForeground(Color.WHITE);
-        btLeaderboard = new JButton("Leaderboard");
-        btLeaderboard.setFont(new Font("Dialog", Font.PLAIN, 20));
-        btLeaderboard.setBackground(PaleVioletRed);
-        btLeaderboard.setOpaque(true);
-        btLeaderboard.setBorderPainted(true);
+
+        icon = new ImageIcon("res/gamebutton/LeaderboardButton.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(220, 45, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btLeaderboard = new JButton(icon);
+        btLeaderboard.setOpaque(false);
+        btLeaderboard.setContentAreaFilled(false);
+        btLeaderboard.setBorderPainted(false);
 
         btLeaderboard.addActionListener(new ActionListener() {
             @Override
@@ -43,12 +50,14 @@ public class StartupForm extends JFrame {
             }
         });
 
-        //btLeaderboard.setForeground(Color.WHITE);
-        btQuit = new JButton("Quit");
-        btQuit.setFont(new Font("Dialog", Font.PLAIN, 20));
-        btQuit.setBackground(PaleVioletRed);
-        btQuit.setOpaque(true);
-        btQuit.setBorderPainted(true);
+        icon = new ImageIcon("res/gamebutton/QuitButton.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(220, 45, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btQuit = new JButton(icon);
+        btQuit.setOpaque(false);
+        btQuit.setContentAreaFilled(false);
+        btQuit.setBorderPainted(false);
 
         btQuit.addActionListener(new ActionListener() {
             @Override
@@ -57,10 +66,10 @@ public class StartupForm extends JFrame {
             }
         });
 
-        //btQuit.setForeground(Color.WHITE);
-        btStart.setBounds(180, 250, 360, 45);
-        btLeaderboard.setBounds(180, 300, 360, 45);
-        btQuit.setBounds(180, 350, 360, 45);
+
+        btStart.setBounds(250, 250, 220, 45);
+        btLeaderboard.setBounds(250, 300, 220, 45);
+        btQuit.setBounds(250, 350, 220, 45);
         this.add(btStart);
         this.add(btLeaderboard);
         this.add(btQuit);

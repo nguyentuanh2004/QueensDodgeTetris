@@ -65,12 +65,15 @@ public class LeaderboardForm extends JFrame {
     public LeaderboardForm() {
         this.setSize(720, 500);
         Color pink = new Color(255,192,203);
-        Color PaleVioletRed = new Color(219,112,147);
         this.getContentPane().setBackground(pink);
-        btMainMenu = new JButton("Main Menu");
-        btMainMenu.setBackground(PaleVioletRed);
-        btMainMenu.setOpaque(true);
-        btMainMenu.setBorderPainted(true);
+        ImageIcon icon = new ImageIcon("res/gamebutton/MainMenuButton.png");
+        Image image = icon.getImage();
+        Image resizeImg = image.getScaledInstance(150, 30, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btMainMenu = new JButton(icon);
+        btMainMenu.setOpaque(false);
+        btMainMenu.setContentAreaFilled(false);
+        btMainMenu.setBorderPainted(false);
         btMainMenu.setBounds(10, 10, 150, 30);
         btMainMenu.addActionListener(new ActionListener() {
             @Override
