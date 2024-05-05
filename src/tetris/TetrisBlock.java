@@ -9,7 +9,15 @@ public class TetrisBlock {
     private int currentRotation;
     private Color color;
     private int x, y;
-    private Color[] availableColors = {Color.CYAN, Color.ORANGE, Color.WHITE};
+    private Color[] availableColors = {
+            new Color(219,112,147),//PaleVioletRed
+            new Color(250,128,114),//Salmon
+            new Color(148,0,211),//DarkViolet
+            new Color(	0,0,128),//Navy
+            new Color(255,0,255),//Fuchsia
+            new Color(255,105,180),//HotPink
+            new Color(255,20,147),//DeepPink
+    };
     public TetrisBlock(int[][] shape) {
         this.shape = shape;
         initShapes();

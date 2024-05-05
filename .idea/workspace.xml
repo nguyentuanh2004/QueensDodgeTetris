@@ -5,13 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c098e06d-d6b2-4846-8fed-e082701961ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gameover/PinkRabbit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tetris/LeaderboardForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tetris/StartupForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tetris/Tetris.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueensDodgeTetris.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueensDodgeTetris.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/GameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../QueensDodgeTetris\exportToHTML" />
@@ -30,31 +48,57 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2eumioaZf6felsgQ9wEqV6Hv8AC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.GameForm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LeaderboardForm.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.MainClass.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StartupForm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Tetris.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JAVA/QueensDodgeTetris&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JAVA\QueensDodgeTetris\res\gameover" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.GameForm">
     <configuration name="GameForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tetris.GameForm" />
+      <module name="QueensDodgeTetris" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tetris.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartupForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tetris.StartupForm" />
       <module name="QueensDodgeTetris" />
       <extension name="coverage">
         <pattern>
@@ -69,6 +113,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameForm" />
+        <item itemvalue="Application.StartupForm" />
       </list>
     </recent_temporary>
   </component>
@@ -97,11 +142,26 @@
       <workItem from="1714202114665" duration="24779000" />
       <workItem from="1714328591042" duration="3193000" />
       <workItem from="1714410437749" duration="1536000" />
-      <workItem from="1714450636077" duration="14786000" />
+      <workItem from="1714450636077" duration="15367000" />
+      <workItem from="1714521141816" duration="11941000" />
+      <workItem from="1714551187234" duration="458000" />
+      <workItem from="1714551873594" duration="164000" />
+      <workItem from="1714552203920" duration="1675000" />
+      <workItem from="1714553932417" duration="4127000" />
+      <workItem from="1714624713884" duration="2610000" />
+      <workItem from="1714631715218" duration="53000" />
+      <workItem from="1714631985021" duration="17000" />
+      <workItem from="1714632182348" duration="30000" />
+      <workItem from="1714712375957" duration="24916000" />
+      <workItem from="1714791765943" duration="53000" />
+      <workItem from="1714813749173" duration="277000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

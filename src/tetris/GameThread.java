@@ -11,6 +11,8 @@ public class GameThread extends Thread{
     public GameThread(GameArea ga, GameForm gf) {
         this.ga = ga;
         this.gf = gf;
+        gf.updateScore(score);
+        gf.updateLevel(level);
     }
     @Override
     public void run() {
@@ -21,12 +23,12 @@ public class GameThread extends Thread{
 
                     Thread.sleep(pause);
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-
+                    //throw new RuntimeException(e);
+                    return;
                 }
             }
             if (ga.isBlockOutOfBounds()) {
-                System.out.println("GAME OVER");
+                Tetris.gameOver();
                 break;
             }
             ga.moveBlockToBackground();

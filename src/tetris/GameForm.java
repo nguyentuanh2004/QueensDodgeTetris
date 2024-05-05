@@ -4,11 +4,15 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GameForm extends JFrame {
     private JPanel gameAreaPlaceHolder;
     private JLabel scoreDisplay, levelDisplay;
     private GameArea ga;
+    private GameThread gt;
+    //
+    private JButton btMainMenu;
     public GameForm() {
         //initComponents();
         gameAreaPlaceHolder = new JPanel();
@@ -17,6 +21,8 @@ public class GameForm extends JFrame {
         gameAreaPlaceHolder.setBorder(new LineBorder(Color.BLACK));
         ga = new GameArea(gameAreaPlaceHolder, 10);
         this.setSize(720, 500);
+        Color pink = new Color(255,192,203);
+        this.getContentPane().setBackground(pink);
         this.add(ga);
         scoreDisplay = new JLabel("Score: 0");
         levelDisplay = new JLabel("Level: 1");
@@ -24,13 +30,31 @@ public class GameForm extends JFrame {
         levelDisplay.setBounds(520, 60, 150, 45);
         this.add(scoreDisplay);
         this.add(levelDisplay);
+        btMainMenu = new JButton("Main Menu");
+        Color PaleVioletRed = new Color(219,112,147);
+        btMainMenu.setBackground(PaleVioletRed);
+        btMainMenu.setOpaque(true);
+        btMainMenu.setBorderPainted(true);
+        btMainMenu.setBounds(10, 10, 150, 30);
+
+        btMainMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                Tetris.showStartup();
+                gt.interrupt();
+            }
+        });
+
+        btMainMenu.setFocusable(false);
+
+        this.add(btMainMenu);
         this.setLayout(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
-
+        //startGame();
         initControls();
-        startGame();
     }
     public void initControls() {
         InputMap im = this.getRootPane().getInputMap();
@@ -67,7 +91,9 @@ public class GameForm extends JFrame {
         });
     }
     public void startGame() {
-        new GameThread(ga, this).start();
+        ga.initBackgroundArray();
+        gt = new GameThread(ga, this);
+        gt.start();
     }
 
     public void updateScore(int score) {
