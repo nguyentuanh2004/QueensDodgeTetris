@@ -26,8 +26,8 @@ public class GameForm extends JFrame {
         this.add(ga);
         scoreDisplay = new JLabel("Score: 0");
         levelDisplay = new JLabel("Level: 1");
-        scoreDisplay.setBounds(520, 10, 150, 45);
-        levelDisplay.setBounds(520, 60, 150, 45);
+        scoreDisplay.setBounds(520, 10, 180, 45);
+        levelDisplay.setBounds(520, 60, 180, 45);
         this.add(scoreDisplay);
         this.add(levelDisplay);
         btMainMenu = new JButton("Main Menu");
@@ -52,7 +52,7 @@ public class GameForm extends JFrame {
         this.setLayout(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        //this.setVisible(true);
         //startGame();
         initControls();
     }
@@ -103,7 +103,7 @@ public class GameForm extends JFrame {
         levelDisplay.setText("Level: " + level);
     }
     public static void main(String[] args) {
-        GameForm gameForm = new GameForm();
+        //GameForm gameForm = new GameForm();
 
     }
 }

@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c098e06d-d6b2-4846-8fed-e082701961ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/gameover/GameOver5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/gameover/PinkRabbit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris/LeaderboardForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris/StartupForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris/Tetris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaderboard" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueensDodgeTetris.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueensDodgeTetris.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/GameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/LeaderboardForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/LeaderboardForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/StartupForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/StartupForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Tetris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +74,26 @@
       <recent name="D:\JAVA\QueensDodgeTetris\res\gameover" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameForm">
+  <component name="RunManager" selected="Application.MainClass">
     <configuration name="GameForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tetris.GameForm" />
       <module name="QueensDodgeTetris" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tetris.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.MainClass" />
+      <module name="QueensDodgeTetris" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,6 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainClass" />
         <item itemvalue="Application.GameForm" />
         <item itemvalue="Application.StartupForm" />
       </list>
@@ -155,6 +160,8 @@
       <workItem from="1714712375957" duration="24916000" />
       <workItem from="1714791765943" duration="53000" />
       <workItem from="1714813749173" duration="277000" />
+      <workItem from="1714869295080" duration="10586000" />
+      <workItem from="1714902764193" duration="1760000" />
     </task>
     <servers />
   </component>

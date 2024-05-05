@@ -67,7 +67,7 @@ public class StartupForm extends JFrame {
         this.setLayout(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        //this.setVisible(true);
     }
 
     public static void main(String[] args) {

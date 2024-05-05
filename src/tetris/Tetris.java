@@ -61,7 +61,7 @@ public class Tetris {
         //}
         sf.setVisible(true);
     }
-    public static void gameOver() {
+    public static void gameOver(int score) {
         UIManager UI=new UIManager();
         UI.put("OptionPane.background", new Color(255,105,180));
         UI.put("Panel.background", new Color(255,105,180));
@@ -70,8 +70,9 @@ public class Tetris {
         Image resizeImg = image.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         icon = new ImageIcon(resizeImg);
         String playerName = (String)JOptionPane.showInputDialog(null,"Game Over!!!\nPlease enter your name", "HAHAHAHA", JOptionPane.DEFAULT_OPTION, icon, null, "");
-        //System.out.println(playerName);
 
+        gf.setVisible(false);
+        lf.addPlayer(playerName, score);
     }
     public static void main(String[] args) {
         //EventQueue.invokeLater(new Runnable() {

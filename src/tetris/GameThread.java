@@ -28,7 +28,7 @@ public class GameThread extends Thread{
                 }
             }
             if (ga.isBlockOutOfBounds()) {
-                Tetris.gameOver();
+                Tetris.gameOver(score);
                 break;
             }
             ga.moveBlockToBackground();
