@@ -1,36 +1,69 @@
 package inputs;
 
 import main.GamePanel;
+import tetris.GameForm;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyboardInputs implements KeyListener {
-    private GamePanel gamePanel;
-    public KeyboardInputs(GamePanel gamePanel) {
-        this.gamePanel = gamePanel;
+    //private GamePanel gamePanel;
+    private boolean upPressed, downPressed, leftPressed, rightPressed;
+//    public KeyboardInputs(GamePanel gamePanel) {
+//        this.gamePanel = gamePanel;
+//    }
+
+
+    public boolean isUpPressed() {
+        return upPressed;
     }
+
+    public boolean isDownPressed() {
+        return downPressed;
+    }
+
+    public boolean isLeftPressed() {
+        return leftPressed;
+    }
+
+    public boolean isRightPressed() {
+        return rightPressed;
+    }
+
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_W:
-                gamePanel.changeYDelta(-5);
+                upPressed = true;
                 break;
             case KeyEvent.VK_A:
-                gamePanel.changeXDelta(-5);
+                leftPressed = true;
                 break;
             case KeyEvent.VK_S:
-                gamePanel.changeYDelta(+5);
+                downPressed = true;
                 break;
             case KeyEvent.VK_D:
-                gamePanel.changeXDelta(5);
+                rightPressed = true;
                 break;
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_W:
+                upPressed = false;
+                break;
+            case KeyEvent.VK_A:
+                leftPressed = false;
+                break;
+            case KeyEvent.VK_S:
+                downPressed = false;
+                break;
+            case KeyEvent.VK_D:
+                rightPressed = false;
+                break;
+        }
     }
 
     @Override

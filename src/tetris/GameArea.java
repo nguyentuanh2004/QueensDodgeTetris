@@ -1,10 +1,14 @@
 package tetris;
 
+import entity.Player;
 import tetrisblocks.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class GameArea extends JPanel {
     private int gridRows;
@@ -13,6 +17,14 @@ public class GameArea extends JPanel {
     private TetrisBlock block;
     private TetrisBlock[] blocks;
     private Color[][] background;
+
+
+    public Player player;
+    private ScheduledExecutorService characterExecutor;
+
+
+
+
     public GameArea(JPanel placeHolder, int columns) {
         placeHolder.setVisible(false);
         this.setBounds(placeHolder.getBounds());
@@ -32,6 +44,7 @@ public class GameArea extends JPanel {
         };
         //background[1][1] = Color.CYAN;
         //spawnBlock();
+        player = new Player();
     }
 
     public void initBackgroundArray() {
@@ -75,10 +88,22 @@ public class GameArea extends JPanel {
             //clearLines();
             return false;
         }
+
         block.moveDown();
         repaint();
+
+
         return true;
     }
+
+    ///
+//    public void updateee() {
+//        block.moveDown();
+//        repaint();
+//    }
+
+
+
     public void moveBlockRight() {
         if (block == null) return;
         if (!checkRight()) return;
@@ -250,6 +275,17 @@ public class GameArea extends JPanel {
             }
         }
     }
+
+
+
+    //public void updatee() {
+    //    player.updateCharacter();
+    ///}
+    public void drawChar(Graphics g) {
+        //updatee();
+        player.draw(g);
+    }
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -264,6 +300,22 @@ public class GameArea extends JPanel {
         */
         drawBackground(g);
         drawBlock(g);
+        drawChar(g);
+    }
 
+
+
+    public void startCharacterUpdate() {
+        characterExecutor = Executors.newSingleThreadScheduledExecutor();
+        characterExecutor.scheduleAtFixedRate(this::updateee, 0, 20, TimeUnit.MILLISECONDS);
+    }
+    public void updateee() {
+        repaint();
+    }
+    public void stopCharacterUpdate() {
+        // Implement stop logic if needed
+        if (characterExecutor != null && !characterExecutor.isShutdown()) {
+            characterExecutor.shutdown();
+        }
     }
 }

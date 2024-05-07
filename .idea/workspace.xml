@@ -5,10 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c098e06d-d6b2-4846-8fed-e082701961ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tetris/AudioPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gamebutton/DownButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gamebutton/LeftButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gamebutton/RightButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gamebutton/UpButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_down_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_down_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_down_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_down_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_left_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_left_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_left_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_left_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_right_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_right_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_right_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_right_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_up_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_up_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_up_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/dog_up_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaderboard" beforeDir="false" afterPath="$PROJECT_DIR$/leaderboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputs/KeyboardInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/KeyboardInputs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/GameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/StartupForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/StartupForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +93,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JAVA\QueensDodgeTetris\res\player" />
+      <recent name="D:\JAVA\QueensDodgeTetris\res\gamebutton" />
       <recent name="D:\JAVA\QueensDodgeTetris\res\gameover" />
     </key>
   </component>
@@ -160,7 +187,9 @@
       <workItem from="1714869295080" duration="10586000" />
       <workItem from="1714902764193" duration="2964000" />
       <workItem from="1714917867826" duration="1395000" />
-      <workItem from="1714920098167" duration="2111000" />
+      <workItem from="1714920098167" duration="8218000" />
+      <workItem from="1714973044546" duration="6355000" />
+      <workItem from="1715009496350" duration="14949000" />
     </task>
     <servers />
   </component>

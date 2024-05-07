@@ -1,5 +1,8 @@
 package tetris;
 
+import entity.Player;
+import inputs.KeyboardInputs;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
@@ -12,9 +15,17 @@ public class GameForm extends JFrame {
     private GameArea ga;
     private GameThread gt;
     //
-    private JButton btMainMenu;
+    //private KeyboardInputs keyInp;
+    //private Player player;
+
+
+
+    private JButton btMainMenu, btUp, btDown, btLeft, btRight;
     public GameForm() {
         //initComponents();
+        //keyInp = new KeyboardInputs();
+
+
         gameAreaPlaceHolder = new JPanel();
         gameAreaPlaceHolder.setBounds(200, 10, 300, 450);
         gameAreaPlaceHolder.setBackground(Color.PINK);
@@ -52,13 +63,98 @@ public class GameForm extends JFrame {
 
         btMainMenu.setFocusable(false);
 
+
+        icon = new ImageIcon("res/gamebutton/LeftButton.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(49, 50, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btLeft = new JButton(icon);
+        btLeft.setOpaque(false);
+        btLeft.setContentAreaFilled(false);
+        btLeft.setBorderPainted(false);
+        btLeft.setBounds(520, 350, 49, 50);
+        btLeft.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ga.player.moveLeft();
+            }
+        });
+        btLeft.setFocusable(false);
+
+        icon = new ImageIcon("res/gamebutton/RightButton.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(49, 50, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btRight = new JButton(icon);
+        btRight.setOpaque(false);
+        btRight.setContentAreaFilled(false);
+        btRight.setBorderPainted(false);
+        btRight.setBounds(620, 350, 49, 50);
+        btRight.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ga.player.moveRight();
+            }
+        });
+        btRight.setFocusable(false);
+
+
+        icon = new ImageIcon("res/gamebutton/UpButton.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(49, 50, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btUp = new JButton(icon);
+        btUp.setOpaque(false);
+        btUp.setContentAreaFilled(false);
+        btUp.setBorderPainted(false);
+        btUp.setBounds(570, 320, 49, 50);
+        btUp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ga.player.moveUp();
+            }
+        });
+        btUp.setFocusable(false);
+
+        icon = new ImageIcon("res/gamebutton/DownButton.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(49, 50, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btDown = new JButton(icon);
+        btDown.setOpaque(false);
+        btDown.setContentAreaFilled(false);
+        btDown.setBorderPainted(false);
+        btDown.setBounds(570, 380, 49, 50);
+        btDown.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ga.player.moveDown();
+            }
+        });
+        btDown.setFocusable(false);
+
+
+
+
+
+
+
         this.add(btMainMenu);
+        this.add(btLeft);
+        this.add(btRight);
+        this.add(btUp);
+        this.add(btDown);
         this.setLayout(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         //this.setVisible(true);
         //startGame();
         initControls();
+        //this.addKeyListener(keyInp);
+
+
+
+        //ga.player.keyInp = this.keyInp;
     }
     public void initControls() {
         InputMap im = this.getRootPane().getInputMap();
@@ -98,6 +194,9 @@ public class GameForm extends JFrame {
         ga.initBackgroundArray();
         gt = new GameThread(ga, this);
         gt.start();
+        //player = new Player(ga, this, keyInp);
+
+
     }
 
     public void updateScore(int score) {

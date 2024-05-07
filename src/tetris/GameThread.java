@@ -16,6 +16,11 @@ public class GameThread extends Thread{
     }
     @Override
     public void run() {
+
+
+        ga.startCharacterUpdate();
+
+
         while (true) {
             ga.spawnBlock();
             while (ga.moveBlockDown()) {
@@ -24,10 +29,14 @@ public class GameThread extends Thread{
                     Thread.sleep(pause);
                 } catch (InterruptedException e) {
                     //throw new RuntimeException(e);
+                    ga.stopCharacterUpdate();
                     return;
                 }
+
+
             }
             if (ga.isBlockOutOfBounds()) {
+                ga.stopCharacterUpdate();
                 Tetris.gameOver(score);
                 break;
             }
@@ -42,5 +51,6 @@ public class GameThread extends Thread{
                 pause -= speedupPerLevel;
             }
         }
+        ga.stopCharacterUpdate();
     }
 }

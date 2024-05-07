@@ -1,12 +1,5 @@
 package main;
-import tetris.GameForm;
-import tetris.LeaderboardForm;
-import tetris.StartupForm;
-import tetris.Tetris;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import tetris.*;
 
 public class MainClass {
 
