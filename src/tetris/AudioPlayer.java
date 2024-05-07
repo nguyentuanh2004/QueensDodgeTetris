@@ -14,13 +14,16 @@ public class AudioPlayer {
     private String soundsFolder = "tetrissounds" + File.separator;
     private String clearLinePath = soundsFolder + "clear.wav";
     private String gameOverPath = soundsFolder + "gameover.wav";
-    private Clip clearLineSound, gameOverSound;
+    private String tetrisThemePath = soundsFolder + "tetristheme.wav";
+    private Clip clearLineSound, gameOverSound, tetrisThemeSound;
     public AudioPlayer() {
         try {
             clearLineSound = AudioSystem.getClip();
             gameOverSound = AudioSystem.getClip();
+            tetrisThemeSound = AudioSystem.getClip();
             clearLineSound.open(AudioSystem.getAudioInputStream(new File(clearLinePath).getAbsoluteFile()));
             gameOverSound.open(AudioSystem.getAudioInputStream(new File(gameOverPath).getAbsoluteFile()));
+            tetrisThemeSound.open(AudioSystem.getAudioInputStream(new File(tetrisThemePath).getAbsoluteFile()));
         } catch (LineUnavailableException e) {
             Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, e);
             //the program can't play the audio file
@@ -38,5 +41,8 @@ public class AudioPlayer {
     public void playGameOver() {
         gameOverSound.setFramePosition(0);
         gameOverSound.start();
+    }
+    public void playTetrisTheme() {
+        tetrisThemeSound.loop(Clip.LOOP_CONTINUOUSLY);
     }
 }

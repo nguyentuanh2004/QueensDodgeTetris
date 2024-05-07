@@ -87,6 +87,9 @@ public class Tetris {
     public static void playGameOver() {
         audio.playGameOver();
     }
+    public static void playTetrisTheme() {
+        audio.playTetrisTheme();
+    }
     public static void main(String[] args) {
         //EventQueue.invokeLater(new Runnable() {
             //@Override

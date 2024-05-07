@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c098e06d-d6b2-4846-8fed-e082701961ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tetrissounds/clear.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tetrissounds/gameover.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tetrissounds/success.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tetrissounds/tetristheme.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/AudioPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/AudioPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Tetris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +164,7 @@
       <workItem from="1714917867826" duration="1395000" />
       <workItem from="1714920098167" duration="8218000" />
       <workItem from="1714973044546" duration="6355000" />
-      <workItem from="1715009496350" duration="18231000" />
+      <workItem from="1715009496350" duration="19637000" />
     </task>
     <servers />
   </component>

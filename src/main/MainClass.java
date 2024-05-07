@@ -9,5 +9,6 @@ public class MainClass {
         Tetris.setLf(new LeaderboardForm());
         Tetris.setAudio(new AudioPlayer());
         Tetris.showStartup();
+        Tetris.playTetrisTheme();
     }
 }
