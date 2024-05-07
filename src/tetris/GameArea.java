@@ -16,7 +16,7 @@ public class GameArea extends JPanel {
     private int gridCellSize;
     private TetrisBlock block;
     private TetrisBlock[] blocks;
-    private Color[][] background;
+    public Color[][] background;
 
 
     public Player player;
@@ -44,8 +44,10 @@ public class GameArea extends JPanel {
         };
         //background[1][1] = Color.CYAN;
         //spawnBlock();
-        player = new Player();
+        player = new Player(this);
     }
+
+
 
     public void initBackgroundArray() {
         background = new Color[gridRows][gridColumns];
@@ -119,6 +121,7 @@ public class GameArea extends JPanel {
     public void dropBlock() {
         if (block == null) return;
         while (checkBottom()) {
+            if (!checkPlayer()) return;
             block.moveDown();
         }
         repaint();
@@ -168,6 +171,80 @@ public class GameArea extends JPanel {
                     int y = row + block.getY() + 1;
                     if (y < 0) break;
                     if (background[y][x] != null) return false;
+                    break;
+                }
+            }
+        }
+        return true;
+    }
+    public boolean checkPlayer() {
+        int[][] shape = block.getShape();
+        int w = block.getWidth();
+        int h = block.getHeight();
+        for (int col = 0; col < w; col++) {
+            for (int row = h - 1; row >= 0; row--) {
+                if (shape[row][col] != 0) {
+                    int x = col + block.getX();
+                    int y = row + block.getY();
+                    if (y < 0) break;
+                    int ax = x * gridCellSize;
+                    int bx = (x + 1) * gridCellSize;
+                    int ay = y * gridCellSize;
+                    int by = (y + 1) * gridCellSize;
+                    if (ax >= player.x + 30 || bx <= player.x) {
+
+                    } else {
+                        if (ay >= player.y + 30 || by <= player.y) {
+
+                        } else {
+                            return false;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        for (int row = 0; row < h; row++) {
+            for (int col = 0; col < w; col++) {
+                if (shape[row][col] != 0) {
+                    int x = col + block.getX();
+                    int y = row + block.getY();
+                    if (y < 0) break;
+                    int ax = x * gridCellSize;
+                    int bx = (x + 1) * gridCellSize;
+                    int ay = y * gridCellSize;
+                    int by = (y + 1) * gridCellSize;
+                    if (ax >= player.x + 30 || bx <= player.x) {
+
+                    } else {
+                        if (ay >= player.y + 30 || by <= player.y) {
+
+                        } else {
+                            return false;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        for (int row = 0; row < h; row++) {
+            for (int col = w - 1; col >= 0; col--) {
+                if (shape[row][col] != 0) {
+                    int x = col + block.getX();
+                    int y = row + block.getY();
+                    int ax = x * gridCellSize;
+                    int bx = (x + 1) * gridCellSize;
+                    int ay = y * gridCellSize;
+                    int by = (y + 1) * gridCellSize;
+                    if (ax >= player.x + 30 || bx <= player.x) {
+
+                    } else {
+                        if (ay >= player.y + 30 || by <= player.y) {
+
+                        } else {
+                            return false;
+                        }
+                    }
                     break;
                 }
             }
@@ -264,6 +341,7 @@ public class GameArea extends JPanel {
         }
     }
     public void drawBlock(Graphics g) {
+        if (block == null) return;
         int h = block.getHeight();
         int w = block.getWidth();
         Color c = block.getColor();
@@ -301,9 +379,10 @@ public class GameArea extends JPanel {
             }
         }
         */
+        drawChar(g);
         drawBackground(g);
         drawBlock(g);
-        drawChar(g);
+
     }
 
 
@@ -314,6 +393,7 @@ public class GameArea extends JPanel {
     }
     public void updateee() {
         repaint();
+        checkPlayer();
     }
     public void stopCharacterUpdate() {
         // Implement stop logic if needed

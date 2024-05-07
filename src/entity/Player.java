@@ -14,13 +14,20 @@ public class Player{
     public int speed;
     public BufferedImage up1, up2, up3, up4, down1, down2, down3, down4, left1, left2, left3, left4, right1, right2, right3, right4;
     public String direction;
-    //public GameArea ga;
+    public int playerCounter;
+    public int playerNum;
+    public boolean mousePressed;
+    //public Color[][] background;
+    private int gridCellSize = 30;
+    private int playerSize = 40;
+    public GameArea ga;
     //private GameForm gf;
     //public KeyboardInputs keyInp;
-    public Player() {
+    public Player(GameArea ga) {
         //this.ga = ga;
         //this.gf = gf;
         //this.keyInp = keyInp;
+        this.ga = ga;
         setDefaultValue();
         getPlayerImage();
         direction = "down";
@@ -28,8 +35,10 @@ public class Player{
     public void setDefaultValue() {
         //x = 200;
         //y = 420;
-        x = 0; y = 0;
+        x = 0; y = 410;
         speed = 4;
+        playerCounter = 0;
+        playerNum = 1;
     }
     public void getPlayerImage() {
         try {
@@ -77,19 +86,115 @@ public class Player{
      */
     public void moveDown() {
         direction = "down";
-        y += speed;
+        //y += speed;
+        //y = Math.min(y, 450 - playerSize);
+
+        int col1 = x / gridCellSize;
+        int col2 = (x + gridCellSize - 1) / gridCellSize;
+        int row = (y + speed + gridCellSize - 1) / gridCellSize;
+        if (row < ga.background.length && row >= 0 && (ga.background[row][col1] != null || ga.background[row][col2] != null)) {
+
+        } else {
+            y += speed;
+            y = Math.min(y, 450 - playerSize);
+        }
+        //System.out.println(x + " " + y);
+
+        playerCounter++;
+        if (playerCounter > 3) {
+            if (playerNum == 1) {
+                playerNum = 2;
+            } else if (playerNum == 2) {
+                playerNum = 3;
+            } else if (playerNum == 3) {
+                playerNum = 4;
+            } else {
+                playerNum = 1;
+            }
+        }
+        if (playerCounter > 3) playerCounter = 0;
+        //playerCounter = 0;
     }
     public void moveLeft() {
         direction = "left";
-        x -= speed;
+//        x -= speed;
+//        x = Math.max(0, x);
+        int col = (x - speed) / gridCellSize;
+        int row1 = (y + gridCellSize - 1) / gridCellSize;
+        int row2 = y / gridCellSize;
+        if (col < ga.background[0].length && col >= 0 && (ga.background[row1][col] != null || ga.background[row2][col] != null)) {
+
+        } else {
+            x -= speed;
+            x = Math.max(0, x);
+        }
+        playerCounter++;
+        if (playerCounter > 3) {
+            if (playerNum == 1) {
+                playerNum = 2;
+            } else if (playerNum == 2) {
+                playerNum = 3;
+            } else if (playerNum == 3) {
+                playerNum = 4;
+            } else {
+                playerNum = 1;
+            }
+            playerCounter = 0;
+        }
     }
     public void moveRight() {
         direction = "right";
-        x += speed;
+//        x += speed;
+//        x = Math.min(300 - playerSize, x);
+        int col = (x + speed + gridCellSize - 1) / gridCellSize;
+        int row1 = (y + gridCellSize - 1) / gridCellSize;
+        int row2 = y / gridCellSize;
+        if (col < ga.background[0].length && col >= 0 && (ga.background[row1][col] != null || ga.background[row2][col] != null)) {
+
+        } else {
+            x += speed;
+            x = Math.min(300 - playerSize, x);
+        }
+        playerCounter++;
+        if (playerCounter > 3) {
+            if (playerNum == 1) {
+                playerNum = 2;
+            } else if (playerNum == 2) {
+                playerNum = 3;
+            } else if (playerNum == 3) {
+                playerNum = 4;
+            } else {
+                playerNum = 1;
+            }
+            playerCounter = 0;
+        }
     }
     public void moveUp() {
         direction = "up";
-        y -= speed;
+//        y -= speed;
+//        y = Math.max(0, y);
+        int col1 = x / gridCellSize;
+        int col2 = (x + gridCellSize - 1) / gridCellSize;
+        int row = (y - speed) / gridCellSize;
+        if (row < ga.background.length && row >= 0 && (ga.background[row][col1] != null || ga.background[row][col2] != null)) {
+
+        } else {
+            y -= speed;
+            y = Math.max(0, y);
+        }
+        playerCounter++;
+        if (playerCounter > 3) {
+            if (playerNum == 1) {
+                playerNum = 2;
+            } else if (playerNum == 2) {
+                playerNum = 3;
+            } else if (playerNum == 3) {
+                playerNum = 4;
+            } else {
+                playerNum = 1;
+            }
+            playerCounter = 0;
+        }
     }
 
     public void draw(Graphics g) {
@@ -97,19 +202,63 @@ public class Player{
         BufferedImage image = null;
         switch (direction) {
             case "up":
-                image = up1;
+                if (playerNum == 1) {
+                    image = up1;
+                }
+                if (playerNum == 2) {
+                    image = up2;
+                }
+                if (playerNum == 3) {
+                    image = up3;
+                }
+                if (playerNum == 4) {
+                    image = up4;
+                }
                 break;
             case "down":
-                image = down1;
+                if (playerNum == 1) {
+                    image = down1;
+                }
+                if (playerNum == 2) {
+                    image = down2;
+                }
+                if (playerNum == 3) {
+                    image = down3;
+                }
+                if (playerNum == 4) {
+                    image = down4;
+                }
                 break;
             case "left":
-                image = left1;
+                if (playerNum == 1) {
+                    image = left1;
+                }
+                if (playerNum == 2) {
+                    image = left2;
+                }
+                if (playerNum == 3) {
+                    image = left3;
+                }
+                if (playerNum == 4) {
+                    image = left4;
+                }
                 break;
             case "right":
-                image = right1;
+                if (playerNum == 1) {
+                    image = right1;
+                }
+                if (playerNum == 2) {
+                    image = right2;
+                }
+                if (playerNum == 3) {
+                    image = right3;
+                }
+                if (playerNum == 4) {
+                    image = right4;
+                }
                 break;
         }
-        g.drawImage(image, x, y, 42, 40, null);
+        g.drawImage(image, x, y, playerSize, playerSize, null);
         //g.drawRect(x, y, 50, 50);
     }
     //@Override

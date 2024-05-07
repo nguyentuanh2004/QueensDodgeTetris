@@ -8,6 +8,8 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GameForm extends JFrame {
     private JPanel gameAreaPlaceHolder;
@@ -79,6 +81,30 @@ public class GameForm extends JFrame {
                 ga.player.moveLeft();
             }
         });
+        btLeft.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                ga.player.mousePressed = true;
+                new Thread() {
+                    public void run() {
+                        while (ga.player.mousePressed) {
+                            if (!ga.checkPlayer()) ga.player.mousePressed = false;
+                            ga.player.moveLeft();
+                            try {
+                                Thread.sleep(20); // Dừng 100 milliseconds trước khi tiếp tục
+                            } catch (InterruptedException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+
+                }.start();
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                ga.player.mousePressed = false;
+            }
+
+        });
         btLeft.setFocusable(false);
 
         icon = new ImageIcon("res/gamebutton/RightButton.png");
@@ -95,6 +121,30 @@ public class GameForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 ga.player.moveRight();
             }
+        });
+        btRight.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                ga.player.mousePressed = true;
+                new Thread() {
+                    public void run() {
+                        while (ga.player.mousePressed) {
+                            if (!ga.checkPlayer()) ga.player.mousePressed = false;
+                            ga.player.moveRight();
+                            try {
+                                Thread.sleep(20); // Dừng 100 milliseconds trước khi tiếp tục
+                            } catch (InterruptedException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+
+                }.start();
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                ga.player.mousePressed = false;
+            }
+
         });
         btRight.setFocusable(false);
 
@@ -114,6 +164,30 @@ public class GameForm extends JFrame {
                 ga.player.moveUp();
             }
         });
+        btUp.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                ga.player.mousePressed = true;
+                new Thread() {
+                    public void run() {
+                        while (ga.player.mousePressed) {
+                            if (!ga.checkPlayer()) ga.player.mousePressed = false;
+                            ga.player.moveUp();
+                            try {
+                                Thread.sleep(20); // Dừng 100 milliseconds trước khi tiếp tục
+                            } catch (InterruptedException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+
+                }.start();
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                ga.player.mousePressed = false;
+            }
+
+        });
         btUp.setFocusable(false);
 
         icon = new ImageIcon("res/gamebutton/DownButton.png");
@@ -130,6 +204,30 @@ public class GameForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 ga.player.moveDown();
             }
+        });
+        btDown.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                ga.player.mousePressed = true;
+                new Thread() {
+                    public void run() {
+                        while (ga.player.mousePressed) {
+                            if (!ga.checkPlayer()) ga.player.mousePressed = false;
+                            ga.player.moveDown();
+                            try {
+                                Thread.sleep(20); // Dừng 100 milliseconds trước khi tiếp tục
+                            } catch (InterruptedException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+
+                }.start();
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                ga.player.mousePressed = false;
+            }
+
         });
         btDown.setFocusable(false);
 
@@ -192,6 +290,7 @@ public class GameForm extends JFrame {
     }
     public void startGame() {
         ga.initBackgroundArray();
+        ga.player.setDefaultValue();
         gt = new GameThread(ga, this);
         gt.start();
         //player = new Player(ga, this, keyInp);

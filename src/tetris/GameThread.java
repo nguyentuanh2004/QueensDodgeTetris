@@ -24,6 +24,7 @@ public class GameThread extends Thread{
         while (true) {
             ga.spawnBlock();
             while (ga.moveBlockDown()) {
+                if (!ga.checkPlayer()) break;
                 try {
 
                     Thread.sleep(pause);
@@ -35,7 +36,7 @@ public class GameThread extends Thread{
 
 
             }
-            if (ga.isBlockOutOfBounds()) {
+            if (ga.isBlockOutOfBounds() || !ga.checkPlayer()) {
                 ga.stopCharacterUpdate();
                 Tetris.gameOver(score);
                 break;
