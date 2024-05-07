@@ -9,6 +9,11 @@ public class Tetris {
     private static GameForm gf;
     private static StartupForm sf;
     private static LeaderboardForm lf;
+    private static AudioPlayer audio;
+
+    public static void setAudio(AudioPlayer audio) {
+        Tetris.audio = audio;
+    }
 
     public static void setGf(GameForm gf) {
         Tetris.gf = gf;
@@ -62,6 +67,7 @@ public class Tetris {
         sf.setVisible(true);
     }
     public static void gameOver(int score) {
+        playGameOver();
         UIManager UI=new UIManager();
         UI.put("OptionPane.background", new Color(255,105,180));
         UI.put("Panel.background", new Color(255,105,180));
@@ -73,6 +79,13 @@ public class Tetris {
 
         gf.setVisible(false);
         lf.addPlayer(playerName, score);
+    }
+
+    public static void playClear() {
+        audio.playClearLine();
+    }
+    public static void playGameOver() {
+        audio.playGameOver();
     }
     public static void main(String[] args) {
         //EventQueue.invokeLater(new Runnable() {

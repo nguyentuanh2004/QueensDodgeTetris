@@ -230,6 +230,9 @@ public class GameArea extends JPanel {
                 r++;
             }
         }
+        if (linesCleared >= 1) {
+            Tetris.playClear();
+        }
         return linesCleared;
     }
     public void clearLine(int r) {
