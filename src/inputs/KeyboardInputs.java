@@ -1,8 +1,5 @@
 package inputs;
 
-import main.GamePanel;
-import tetris.GameForm;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 

@@ -99,6 +99,12 @@ public class Tetris {
     public static void playTetrisTheme() {
         audio.playTetrisTheme();
     }
+    public static void muteSound() {
+        audio.mute();
+    }
+    public static void unmuteSound() {
+        audio.unmute();
+    }
     public static void main(String[] args) {
         //EventQueue.invokeLater(new Runnable() {
             //@Override

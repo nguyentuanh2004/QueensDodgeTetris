@@ -10,7 +10,9 @@ public class StartupForm extends JFrame {
     private JButton btLeaderboard;
     private JButton btQuit;
     private JButton btHelp;
+    private JButton btSound;
     private JLabel nameLabel;
+    private boolean mute = false;
     public StartupForm() {
         this.setSize(720, 500);
         Color pink = new Color(255,192,203);
@@ -87,6 +89,29 @@ public class StartupForm extends JFrame {
             }
         });
 
+        icon = new ImageIcon("res/gamebutton/SoundButton.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(49, 50, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btSound = new JButton(icon);
+        btSound.setOpaque(false);
+        btSound.setContentAreaFilled(false);
+        btSound.setBorderPainted(false);
+
+        btSound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (!mute) {
+                    mute = true;
+                    Tetris.muteSound();
+                } else {
+                    mute = false;
+                    Tetris.unmuteSound();
+                }
+            }
+        });
+
 
         icon = new ImageIcon("res/background/gamename.png");
         image = icon.getImage();
@@ -98,12 +123,14 @@ public class StartupForm extends JFrame {
 
         btStart.setBounds(250, 250, 220, 45);
         btLeaderboard.setBounds(250, 300, 220, 45);
-        btQuit.setBounds(250, 350, 220, 45);
-        btHelp.setBounds(250, 400, 220, 45);
+        btHelp.setBounds(250, 350, 220, 45);
+        btQuit.setBounds(250, 400, 220, 45);
+        btSound.setBounds(640, 400, 49, 50);
         this.add(btStart);
         this.add(btLeaderboard);
         this.add(btQuit);
         this.add(btHelp);
+        this.add(btSound);
         this.add(nameLabel);
         this.setLayout(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
