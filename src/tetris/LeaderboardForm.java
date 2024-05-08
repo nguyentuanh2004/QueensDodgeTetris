@@ -1,5 +1,7 @@
 package tetris;
 
+import data.MyJDBC;
+
 import javax.naming.ldap.SortKey;
 import javax.swing.*;
 import javax.swing.SortOrder;
@@ -13,8 +15,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.logging.Logger;
 
 public class LeaderboardForm extends JFrame {
     private JButton btMainMenu;
@@ -23,6 +29,7 @@ public class LeaderboardForm extends JFrame {
     private TableRowSorter<TableModel> sorter;
     private JScrollPane scrollPane;
     private final String LEADERBOARD_FILE = "leaderboard";
+    private MyJDBC myJDBC;
     private void initTableData() {
         //tm = (DefaultTableModel) leaderboard.getModel();
         tm = new DefaultTableModel() {
@@ -63,6 +70,7 @@ public class LeaderboardForm extends JFrame {
         sorter.setSortKeys(keys);
     }
     public LeaderboardForm() {
+        myJDBC = new MyJDBC();
         this.setSize(720, 500);
         Color pink = new Color(255,192,203);
         this.getContentPane().setBackground(pink);
@@ -86,7 +94,7 @@ public class LeaderboardForm extends JFrame {
         this.add(btMainMenu);
 
         //leaderboard = new JTable();
-        initTableData();
+        initTableData2();
         initTableSorter();
 
         //tm.addColumn("Player"); tm.addColumn("Score");
@@ -120,6 +128,53 @@ public class LeaderboardForm extends JFrame {
         } catch (Exception e) {
 
         }
+    }
+
+    public void addPlayer2(String playerName, int score) {
+        tm.addRow(new Object[] {playerName, score});
+        sorter.sort();
+        saveLeaderboard2(playerName, score);
+        this.setVisible(true);
+    }
+    private void saveLeaderboard2(String playerName, int score) {
+        myJDBC.insertToDatabase(playerName, score);
+    }
+
+    private void initTableData2() {
+        //tm = (DefaultTableModel) leaderboard.getModel();
+        tm = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+            @Override
+            public Class getColumnClass(int col) {
+                if (col == 1)       //second column accepts only Integer values
+                    return Integer.class;
+                else return String.class;  //other columns accept String values
+            }
+        };
+        tm.addColumn("Player");
+        tm.addColumn("Score");
+        try {
+            ResultSet resultSet = myJDBC.getResult();
+            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+            int c = resultSetMetaData.getColumnCount();
+            while (resultSet.next()) {
+                Vector vector = new Vector();
+                for (int i = 0; i < c; i++) {
+                    vector.add(resultSet.getString("playername"));
+                    vector.add(resultSet.getInt("score"));
+                }
+                tm.addRow(vector);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        leaderboard = new JTable(tm);
     }
     public static void main(String[] args) {
         /*EventQueue.invokeLater(new Runnable() {

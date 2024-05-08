@@ -22,8 +22,11 @@ public class GameArea extends JPanel {
     public Player player;
     private ScheduledExecutorService characterExecutor;
 
+    private boolean checkPause = false;
 
-
+    public boolean isCheckPause() {
+        return checkPause;
+    }
 
     public GameArea(JPanel placeHolder, int columns) {
         placeHolder.setVisible(false);
@@ -46,10 +49,15 @@ public class GameArea extends JPanel {
         //spawnBlock();
         player = new Player(this);
     }
-
+    public void changePause() {
+        if (checkPause) {
+            checkPause = false;
+        } else checkPause = true;
+    }
 
 
     public void initBackgroundArray() {
+        checkPause = false;
         background = new Color[gridRows][gridColumns];
     }
 
@@ -73,6 +81,10 @@ public class GameArea extends JPanel {
         g.drawRect(x, y, gridCellSize, gridCellSize);
     }
     public void spawnBlock() {
+        if (checkPause) return;
+
+
+
         Random ran = new Random();
         block = blocks[ran.nextInt(blocks.length)];
         block.spawn(gridColumns);
@@ -90,8 +102,7 @@ public class GameArea extends JPanel {
             //clearLines();
             return false;
         }
-
-        block.moveDown();
+        if (!checkPause) block.moveDown();
         //if (!checkPlayer()) return false;
         repaint();
 
@@ -108,6 +119,9 @@ public class GameArea extends JPanel {
 
 
     public void moveBlockRight() {
+        if (checkPause) return;
+
+
         if (block == null) return;
         if (!checkRight()) return;
         block.moveRight();
@@ -118,6 +132,9 @@ public class GameArea extends JPanel {
 //        }
     }
     public void moveBlockLeft() {
+        if (checkPause) return;
+
+
         if (block == null) return;
         if (!checkLeft()) return;
         block.moveLeft();
@@ -125,6 +142,9 @@ public class GameArea extends JPanel {
         repaint();
     }
     public void dropBlock() {
+        if (checkPause) return;
+
+
         if (block == null) return;
         while (checkBottom()) {
             if (!checkPlayer()) return;
@@ -133,6 +153,9 @@ public class GameArea extends JPanel {
         repaint();
     }
     public void rotateBlock() {
+        if (checkPause) return;
+
+
         if (block == null) return;
         block.rotate();
         if (block.getLeftEdge() < 0) block.setX(0);

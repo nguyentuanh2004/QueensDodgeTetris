@@ -22,7 +22,7 @@ public class GameForm extends JFrame {
 
 
 
-    private JButton btMainMenu, btUp, btDown, btLeft, btRight;
+    private JButton btMainMenu, btUp, btDown, btLeft, btRight, btPauseGame;
     public GameForm() {
         //initComponents();
         //keyInp = new KeyboardInputs();
@@ -231,7 +231,22 @@ public class GameForm extends JFrame {
         });
         btDown.setFocusable(false);
 
-
+        icon = new ImageIcon("res/gamebutton/PauseGameButton.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(193, 70, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        btPauseGame = new JButton(icon);
+        btPauseGame.setOpaque(false);
+        btPauseGame.setContentAreaFilled(false);
+        btPauseGame.setBorderPainted(false);
+        btPauseGame.setBounds(510, 110, 193, 70);
+        btPauseGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ga.changePause();
+            }
+        });
+        btPauseGame.setFocusable(false);
 
 
 
@@ -242,6 +257,7 @@ public class GameForm extends JFrame {
         this.add(btRight);
         this.add(btUp);
         this.add(btDown);
+        this.add(btPauseGame);
         this.setLayout(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);

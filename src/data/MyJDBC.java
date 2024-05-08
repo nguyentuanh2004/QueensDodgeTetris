@@ -44,21 +44,27 @@ public class MyJDBC {
             e.printStackTrace();
         }
     }
-    public void printResult() {
+    public ResultSet getResult() {
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM USERS");
+            return resultSet;
+            /*
+            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("playername"));
                 System.out.println(resultSet.getInt("score"));
             }
+
+             */
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return null;
     }
     public static void main(String[] args) {
         MyJDBC myJDBC = new MyJDBC();
         myJDBC.insertToDatabase("Phuong", 7);
-        myJDBC.printResult();
+        //myJDBC.printResult();
     }
 }

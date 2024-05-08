@@ -85,6 +85,7 @@ public class Player{
 
      */
     public void moveDown() {
+        if (ga.isCheckPause()) return;
         direction = "down";
         //y += speed;
         //y = Math.min(y, 450 - playerSize);
@@ -116,6 +117,7 @@ public class Player{
         //playerCounter = 0;
     }
     public void moveLeft() {
+        if (ga.isCheckPause()) return;
         direction = "left";
 //        x -= speed;
 //        x = Math.max(0, x);
@@ -143,6 +145,7 @@ public class Player{
         }
     }
     public void moveRight() {
+        if (ga.isCheckPause()) return;
         direction = "right";
 //        x += speed;
 //        x = Math.min(300 - playerSize, x);
@@ -170,6 +173,7 @@ public class Player{
         }
     }
     public void moveUp() {
+        if (ga.isCheckPause()) return;
         direction = "up";
 //        y -= speed;
 //        y = Math.max(0, y);
