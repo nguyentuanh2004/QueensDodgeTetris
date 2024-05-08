@@ -9,7 +9,13 @@ public class Tetris {
     private static GameForm gf;
     private static StartupForm sf;
     private static LeaderboardForm lf;
+    private static HelpForm hf;
     private static AudioPlayer audio;
+
+    public static void setHf(HelpForm hf) {
+        Tetris.hf = hf;
+        Tetris.hf.setVisible(false);
+    }
 
     public static void setAudio(AudioPlayer audio) {
         Tetris.audio = audio;
@@ -65,6 +71,9 @@ public class Tetris {
             //lf = new LeaderboardForm();
         //}
         sf.setVisible(true);
+    }
+    public static void showHelp() {
+        hf.setVisible(true);
     }
     public static void gameOver(int score) {
         playGameOver();

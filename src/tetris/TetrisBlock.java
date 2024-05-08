@@ -42,7 +42,8 @@ public class TetrisBlock {
         currentRotation = ran.nextInt(shapes.length);
         shape = shapes[currentRotation];
         y = 0 - getHeight();
-        x = (gridWidth - getWidth()) / 2;
+        //x = (gridWidth - getWidth()) / 2;
+        x = ran.nextInt(gridWidth - getWidth());
         color = availableColors[ran.nextInt(availableColors.length)];
     }
     public int[][] getShape() {

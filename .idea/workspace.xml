@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c098e06d-d6b2-4846-8fed-e082701961ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/MyJDBC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/background/gamename.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/background/help.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/gamebutton/HelpButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tetris/HelpForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueensDodgeTetris.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueensDodgeTetris.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leaderboard" beforeDir="false" afterPath="$PROJECT_DIR$/leaderboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/MyJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/MyJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/GameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/StartupForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/StartupForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Tetris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/TetrisBlock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +81,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\JAVA\QueensDodgeTetris\res\player" />
+      <recent name="D:\JAVA\QueensDodgeTetris\res\background" />
       <recent name="D:\JAVA\QueensDodgeTetris\res\gamebutton" />
+      <recent name="D:\JAVA\QueensDodgeTetris\res\player" />
       <recent name="D:\JAVA\QueensDodgeTetris\res\gameover" />
     </key>
   </component>
@@ -173,7 +178,7 @@
       <workItem from="1714917867826" duration="1395000" />
       <workItem from="1714920098167" duration="8218000" />
       <workItem from="1714973044546" duration="6355000" />
-      <workItem from="1715009496350" duration="43576000" />
+      <workItem from="1715009496350" duration="58767000" />
     </task>
     <servers />
   </component>

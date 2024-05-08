@@ -92,6 +92,7 @@ public class GameArea extends JPanel {
         }
 
         block.moveDown();
+        //if (!checkPlayer()) return false;
         repaint();
 
 
@@ -110,12 +111,17 @@ public class GameArea extends JPanel {
         if (block == null) return;
         if (!checkRight()) return;
         block.moveRight();
+
         repaint();
+//        if (!checkPlayer()) {
+//            return;
+//        }
     }
     public void moveBlockLeft() {
         if (block == null) return;
         if (!checkLeft()) return;
         block.moveLeft();
+//        if (!checkPlayer()) return;
         repaint();
     }
     public void dropBlock() {
@@ -393,7 +399,7 @@ public class GameArea extends JPanel {
     }
     public void updateee() {
         repaint();
-        checkPlayer();
+        //checkPlayer();
     }
     public void stopCharacterUpdate() {
         // Implement stop logic if needed

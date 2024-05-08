@@ -11,14 +11,13 @@ public class MyJDBC {
                     "anh223630670$"
             );
             Statement statement = connection.createStatement();
-            String query  = "INSERT INTO `new_schema`.`users`\n" +
-                    "(`playername`,\n" +
-                    "`score`)\n" +
-                    "VALUES\n" +
-                    "(\"TUANHH\",\n" +
-                    "10);";
-            int rowsInserted = statement.executeUpdate(query);
-            System.out.println(rowsInserted + " row(s) inserted.");
+            String query  = "INSERT INTO `new_schema`.`users` (`playername`, `score`) VALUES (?, ?);";
+            PreparedStatement insert = connection.prepareStatement(query);
+            insert.setString(1, "tuanh");
+            insert.setString(2, "20");
+            insert.executeUpdate();
+            //int rowsInserted = statement.executeUpdate(query);
+            //System.out.println(rowsInserted + " row(s) inserted.");
             ResultSet resultSet = statement.executeQuery("SELECT * FROM USERS");
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("playername"));
