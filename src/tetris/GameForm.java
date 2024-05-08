@@ -13,7 +13,8 @@ import java.awt.event.MouseEvent;
 
 public class GameForm extends JFrame {
     private JPanel gameAreaPlaceHolder;
-    private JLabel scoreDisplay, levelDisplay;
+    private JLabel scoreDisplay, levelDisplay, cherryblossom, blossom1, blossom2;
+
     private GameArea ga;
     private GameThread gt;
     //
@@ -248,7 +249,33 @@ public class GameForm extends JFrame {
         });
         btPauseGame.setFocusable(false);
 
+        icon = new ImageIcon("res/background/blossom1.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(200, 154, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        blossom1 = new JLabel(icon);
+        blossom1.setOpaque(false);
+        blossom1.setBounds(0, 50, 200, 154);
 
+
+
+        icon = new ImageIcon("res/background/blossom2.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(200, 177, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        blossom2 = new JLabel(icon);
+        blossom2.setOpaque(false);
+        blossom2.setBounds(0, 300, 200, 177);
+
+
+
+        icon = new ImageIcon("res/background/cherryblossom2.png");
+        image = icon.getImage();
+        resizeImg = image.getScaledInstance(200, 100, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(resizeImg);
+        cherryblossom = new JLabel(icon);
+        cherryblossom.setOpaque(false);
+        cherryblossom.setBounds(500, 180, 200, 100);
 
 
 
@@ -258,6 +285,9 @@ public class GameForm extends JFrame {
         this.add(btUp);
         this.add(btDown);
         this.add(btPauseGame);
+        this.add(cherryblossom);
+        this.add(blossom1);
+        this.add(blossom2);
         this.setLayout(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
