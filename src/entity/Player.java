@@ -19,7 +19,7 @@ public class Player{
     public boolean mousePressed;
     //public Color[][] background;
     private int gridCellSize = 30;
-    private int playerSize = 40;
+    private int playerSize = 30;
     public GameArea ga;
     //private GameForm gf;
     //public KeyboardInputs keyInp;
@@ -35,7 +35,7 @@ public class Player{
     public void setDefaultValue() {
         //x = 200;
         //y = 420;
-        x = 0; y = 410;
+        x = 0; y = 420;
         speed = 4;
         playerCounter = 0;
         playerNum = 1;

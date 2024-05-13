@@ -11,10 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c098e06d-d6b2-4846-8fed-e082701961ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/GameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/GameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Tetris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +178,7 @@
       <workItem from="1715184757190" duration="18106000" />
       <workItem from="1715349386489" duration="2461000" />
       <workItem from="1715450597230" duration="621000" />
+      <workItem from="1715638744689" duration="1212000" />
     </task>
     <servers />
   </component>

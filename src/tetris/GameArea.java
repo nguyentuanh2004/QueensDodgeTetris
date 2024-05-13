@@ -1,10 +1,13 @@
 package tetris;
 
+import com.mysql.cj.conf.ConnectionUrlParser;
 import entity.Player;
 import tetrisblocks.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -18,9 +21,6 @@ public class GameArea extends JPanel {
     private TetrisBlock[] blocks;
     public Color[][] background;
 
-    public int getGridColumns() {
-        return gridColumns;
-    }
 
     public Player player;
     private ScheduledExecutorService characterExecutor;
@@ -151,12 +151,7 @@ public class GameArea extends JPanel {
 
         if (block == null) return;
         while (checkBottom()) {
-            if (!checkPlayer()) {
-
-                //
-                block = null;
-                return;
-            }
+            if (!checkPlayer()) return;
             block.moveDown();
         }
         repaint();
@@ -195,9 +190,6 @@ public class GameArea extends JPanel {
         return true;
     }
     public  boolean checkBottom() {
-        if (block == null) return false;
-
-
         if (block.getBottomEdge() == gridRows) {
             return false;
         }
@@ -291,6 +283,47 @@ public class GameArea extends JPanel {
                 }
             }
         }
+
+        //kiem tra nhan vat co bi nhot hay khong???
+        // dùng bfs kiểm tra có thể đi đến một trong số các ô trên cùng hay không
+        int[] moveX = {0, 0, 1, -1};
+        int[] moveY = {1, -1, 0, 0};
+        boolean[][] checkagain = new boolean[gridRows][gridColumns];
+        for (int i = 0; i < gridRows; i++) for (int j = 0; j < gridColumns; j++) checkagain[i][j] = false;
+        class pair{
+            public int x, y;
+            pair() {
+
+            }
+            pair(int x, int y) {
+                this.x = x;
+                this.y = y;
+            }
+        }
+        Queue<pair> queue = new LinkedList<>();
+        pair curr = new pair(player.y / gridCellSize, player.x / gridCellSize);
+        if (curr.x == 0) return true;
+        //System.out.println(curr.x + " " + curr.y);
+        checkagain[curr.x][curr.y] = true;
+        queue.add(curr);
+        while (!queue.isEmpty()) {
+            curr = queue.poll();
+            if (curr.x == 0) return true;
+            for (int i = 0; i < moveX.length; i++) {
+                pair next = new pair(curr.x + moveX[i], curr.y + moveY[i]);
+                if (next.x >= 0 && next.x < gridRows && next.y >= 0 && next.y < gridColumns && !checkagain[next.x][next.y] && background[next.x][next.y] == null) {
+                    queue.add(next);
+                    checkagain[next.x][next.y] = true;
+                }
+            }
+        }
+        boolean bl = true;
+        for (int i = 0; i < gridColumns; i++) if (checkagain[0][i] == true) bl = false;
+        if (bl) return false;
+
+
+
+
         return true;
     }
     public boolean checkLeft() {
@@ -367,7 +400,6 @@ public class GameArea extends JPanel {
         }
     }
     public void moveBlockToBackground() {
-        if (block == null) return;
         int[][] shape = block.getShape();
         int h = block.getHeight();
         int w = block.getWidth();
@@ -444,8 +476,5 @@ public class GameArea extends JPanel {
             characterExecutor.shutdown();
         }
     }
-
-    public void setnull() {
-        block = null;
-    }
 }
+

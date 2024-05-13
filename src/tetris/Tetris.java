@@ -38,13 +38,13 @@ public class Tetris {
 
     public static void start() {
         //if (gf == null) {
-            //gf = new GameForm();
+        //gf = new GameForm();
         //}
         //if (sf == null) {
-            //sf = new StartupForm();
+        //sf = new StartupForm();
         //}
         //if (lf == null) {
-            //lf = new LeaderboardForm();
+        //lf = new LeaderboardForm();
         //}
         //sf.setVisible(true);
         gf.setVisible(true);
@@ -52,30 +52,30 @@ public class Tetris {
     }
     public static void showLeaderboard() {
         //if (sf == null) {
-            //sf = new StartupForm();
+        //sf = new StartupForm();
         //}
         //if (lf == null) {
-            //lf = new LeaderboardForm();
+        //lf = new LeaderboardForm();
         //}
         //sf.setVisible(true);
         lf.setVisible(true);
     }
     public static void showStartup() {
         //if (gf == null) {
-            //gf = new GameForm();
+        //gf = new GameForm();
         //}
         //if (sf == null) {
-            //sf = new StartupForm();
+        //sf = new StartupForm();
         //}
-       //if (lf == null) {
-            //lf = new LeaderboardForm();
+        //if (lf == null) {
+        //lf = new LeaderboardForm();
         //}
         sf.setVisible(true);
     }
     public static void showHelp() {
         hf.setVisible(true);
     }
-    public static void gameOver(double score) {
+    public static void gameOver(int score) {
         playGameOver();
         UIManager UI=new UIManager();
         UI.put("OptionPane.background", new Color(255,105,180));
@@ -87,7 +87,7 @@ public class Tetris {
         String playerName = (String)JOptionPane.showInputDialog(null,"Game Over!!!\nPlease enter your name", "HAHAHAHA", JOptionPane.DEFAULT_OPTION, icon, null, "");
 
         gf.setVisible(false);
-        lf.addPlayer2(playerName, (int)score);
+        lf.addPlayer2(playerName, score);
     }
 
     public static void playClear() {
@@ -107,19 +107,19 @@ public class Tetris {
     }
     public static void main(String[] args) {
         //EventQueue.invokeLater(new Runnable() {
-            //@Override
-            //public void run() {
-                //gf = new GameForm();
-                //sf = new StartupForm();
-                //lf = new LeaderboardForm();
-                //sf.setVisible(true);
-            //}
+        //@Override
+        //public void run() {
+        //gf = new GameForm();
+        //sf = new StartupForm();
+        //lf = new LeaderboardForm();
+        //sf.setVisible(true);
+        //}
 
-                //Tetris.sf = new StartupForm();
+        //Tetris.sf = new StartupForm();
         //  Tetris.gf = new GameForm();
-                //Tetris.lf = new LeaderboardForm();
-                //Tetris.sf.setVisible(true);
-         //   }
+        //Tetris.lf = new LeaderboardForm();
+        //Tetris.sf.setVisible(true);
+        //   }
         //});
         //sf = new StartupForm();
         //gf = new GameForm();
