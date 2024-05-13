@@ -344,7 +344,7 @@ public class GameForm extends JFrame {
 
     }
 
-    public void updateScore(int score) {
+    public void updateScore(double score) {
         scoreDisplay.setText("Score: " + score);
     }
     public void updateLevel(int level) {

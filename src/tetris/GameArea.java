@@ -18,6 +18,9 @@ public class GameArea extends JPanel {
     private TetrisBlock[] blocks;
     public Color[][] background;
 
+    public int getGridColumns() {
+        return gridColumns;
+    }
 
     public Player player;
     private ScheduledExecutorService characterExecutor;
@@ -90,6 +93,7 @@ public class GameArea extends JPanel {
         block.spawn(gridColumns);
     }
     public boolean isBlockOutOfBounds() {
+        if (block == null) return false;
         if (block.getY() < 0) {
             block = null;
             return true;
@@ -147,7 +151,12 @@ public class GameArea extends JPanel {
 
         if (block == null) return;
         while (checkBottom()) {
-            if (!checkPlayer()) return;
+            if (!checkPlayer()) {
+
+                //
+                block = null;
+                return;
+            }
             block.moveDown();
         }
         repaint();
@@ -186,6 +195,9 @@ public class GameArea extends JPanel {
         return true;
     }
     public  boolean checkBottom() {
+        if (block == null) return false;
+
+
         if (block.getBottomEdge() == gridRows) {
             return false;
         }
@@ -207,6 +219,7 @@ public class GameArea extends JPanel {
         return true;
     }
     public boolean checkPlayer() {
+        if (block == null) return false;
         int[][] shape = block.getShape();
         int w = block.getWidth();
         int h = block.getHeight();
@@ -354,6 +367,7 @@ public class GameArea extends JPanel {
         }
     }
     public void moveBlockToBackground() {
+        if (block == null) return;
         int[][] shape = block.getShape();
         int h = block.getHeight();
         int w = block.getWidth();
@@ -429,5 +443,9 @@ public class GameArea extends JPanel {
         if (characterExecutor != null && !characterExecutor.isShutdown()) {
             characterExecutor.shutdown();
         }
+    }
+
+    public void setnull() {
+        block = null;
     }
 }

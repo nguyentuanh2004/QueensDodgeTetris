@@ -75,7 +75,7 @@ public class Tetris {
     public static void showHelp() {
         hf.setVisible(true);
     }
-    public static void gameOver(int score) {
+    public static void gameOver(double score) {
         playGameOver();
         UIManager UI=new UIManager();
         UI.put("OptionPane.background", new Color(255,105,180));
@@ -87,7 +87,7 @@ public class Tetris {
         String playerName = (String)JOptionPane.showInputDialog(null,"Game Over!!!\nPlease enter your name", "HAHAHAHA", JOptionPane.DEFAULT_OPTION, icon, null, "");
 
         gf.setVisible(false);
-        lf.addPlayer2(playerName, score);
+        lf.addPlayer2(playerName, (int)score);
     }
 
     public static void playClear() {
